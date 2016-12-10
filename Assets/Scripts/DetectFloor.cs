@@ -14,7 +14,7 @@ public class DetectFloor : MonoBehaviour {
         print("canJump=" + canJump);
 	}
 
-    bool OnTriggerEnter2D(Collider2D col)
+    bool OnTriggerStay2D(Collider2D col)
     {
         print("tag is "+ col.tag);
         
