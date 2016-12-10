@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
 	void Start () {
        
         stats.Speed = 5;
-        stats.JumpStrength = 500;
+        stats.JumpStrength = 750;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour {
         if (DetectFloor.canJump && Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector2.up * stats.JumpStrength);
+            
             DetectFloor.canJump = false;
         }
         if (Input.GetKey(KeyCode.D))
