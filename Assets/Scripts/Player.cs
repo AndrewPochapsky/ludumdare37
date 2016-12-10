@@ -31,7 +31,8 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.A))
         {
-            if(transform.position.x > -14.85578f)
+            
+            if (transform.position.x > -15.13295f)
             {
                 transform.Translate(Vector2.left * stats.Speed * Time.deltaTime);
             }
@@ -47,7 +48,8 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.D))
         {
             //fixes bug where player would go into wall briefly, didnt use rb.MovePosition() cause it made the player float in air when moving
-            if(transform.position.x < 14.80552f)
+            
+            if (transform.position.x < 15.07445f)
             {
                 transform.Translate(Vector2.right * stats.Speed * Time.deltaTime);
             }
