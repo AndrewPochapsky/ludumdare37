@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseWeapon : MonoBehaviour {
 
     public float FireRate { get; set; }
-    public int Damage { get; set; }
+    public float Damage { get; set; }
     public float NextFire { get; set; }
     public string Name { get; set; }
     public float BulletSpeed { get; set; }

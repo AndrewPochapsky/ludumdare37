@@ -28,7 +28,7 @@ public class Box : MonoBehaviour {
 
     void SwitchWeapon()
     {
-        newWeapon = Random.Range(0, 3);
+        newWeapon = Random.Range(0, 4);
         if(currentWeapon != null)
         {
             Destroy(currentWeapon);

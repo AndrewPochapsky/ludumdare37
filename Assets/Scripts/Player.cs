@@ -52,13 +52,22 @@ public class Player : MonoBehaviour {
             if (transform.position.x < 15.07445f)
             {
                 transform.Translate(Vector2.right * stats.Speed * Time.deltaTime);
-            }
-          
-           
+            }        
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Die();
+        }
+    }
 
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 
 
 }

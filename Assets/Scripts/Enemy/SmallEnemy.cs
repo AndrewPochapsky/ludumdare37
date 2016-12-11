@@ -10,7 +10,7 @@ public class SmallEnemy : BaseEnemy {
         direction = (Direction)(Random.Range(0, 2));
         Speed = 5;
         changeDirection=transform.GetChild(0).GetComponent<ChangeDirection>();
-        Health = 6;
+        Health = 5;
     }
 
     

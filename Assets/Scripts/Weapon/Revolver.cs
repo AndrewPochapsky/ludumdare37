@@ -9,9 +9,9 @@ public class Revolver : BaseWeapon {
         Cam = GameObject.FindObjectOfType<Camera>();
         spriteRotation = SpriteRotation.Right;
         GunExit = transform.GetChild(0).transform;
-        FireRate = 1.5f;
+        FireRate = 1.15f;
         BulletSpeed = 20;
-        Damage = 4;
+        Damage = 5;
         BulletScaleX = 0.35f;
         BulletScaleY = 0.35f;
     }

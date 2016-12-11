@@ -9,9 +9,9 @@ public class Pistol : BaseWeapon {
         Cam = GameObject.FindObjectOfType<Camera>();
         spriteRotation = SpriteRotation.Left;
         GunExit = transform.GetChild(0).transform;
-        FireRate = 1;
+        FireRate = 0.75f;
         BulletSpeed = 20;
-        Damage = 2;
+        Damage = 3;
         BulletScaleX = 0.25f;
         BulletScaleY = 0.25f;
 

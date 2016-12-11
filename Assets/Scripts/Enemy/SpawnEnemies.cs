@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour {
-    private float batchSpawnRate=5;
+    private float batchSpawnRate=8;
     private float waveSpawnRate = 2;
     private int enemyNum = 3;
     private float nextSpawn;

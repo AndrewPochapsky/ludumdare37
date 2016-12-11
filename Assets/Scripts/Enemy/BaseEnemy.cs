@@ -5,8 +5,8 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour{
 
     public float Speed { get; set; }
-    public int Damage { get; set; }
-    public int Health { get; set; }
+    public float Damage { get; set; }
+    public float Health { get; set; }
 
     public GameObject Gun { get; set; }
     public ChangeDirection changeDirection;
