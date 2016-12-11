@@ -33,7 +33,7 @@ public class SpawnEnemies : MonoBehaviour {
         for (int i = 0; i < enemyNum; i++)
         {
             Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            GameObject enemy = Instantiate(Resources.Load<GameObject>("Enemies/Enemy0") , _sp.position, _sp.rotation);
+            GameObject enemy = Instantiate(Resources.Load<GameObject>("Enemies/Enemy"+ Random.Range(0,2)) , _sp.position, _sp.rotation);
             yield return new WaitForSeconds(1f / waveSpawnRate);
         }
         

@@ -16,7 +16,7 @@ public class DetectFloor : MonoBehaviour {
 
     bool OnTriggerStay2D(Collider2D col)
     {
-        print("tag is "+ col.tag);
+        
         
         if (col.tag == "Floor")
         {
