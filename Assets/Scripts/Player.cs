@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
        
-        stats.Speed = 5;
+        stats.Speed = 10;
         stats.JumpStrength = 750;
 	}
 	

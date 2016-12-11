@@ -9,7 +9,8 @@ public class BaseWeapon : MonoBehaviour {
     public float NextFire { get; set; }
     public string Name { get; set; }
     public float BulletSpeed { get; set; }
-
+    public float BulletScaleX { get; set; }
+    public float BulletScaleY { get; set; }
 
     public Vector2 MousePosition { get; set; }
     public Camera Cam;
@@ -45,6 +46,7 @@ public class BaseWeapon : MonoBehaviour {
         {
            
             GameObject bullet = Instantiate(Resources.Load<GameObject>("Weapons/Bullet"), GunExit.position, GunExit.rotation);
+            bullet.transform.localScale = new Vector2(BulletScaleX, BulletScaleY);
             bullet.GetComponent<Rigidbody2D>().velocity = (Direction * BulletSpeed);
             NextFire = Time.time + FireRate;
         }

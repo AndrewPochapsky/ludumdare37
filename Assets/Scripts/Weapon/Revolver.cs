@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : BaseWeapon {
+public class Revolver : BaseWeapon {
 
 	// Use this for initialization
 	void Start () {
         Cam = GameObject.FindObjectOfType<Camera>();
-        spriteRotation = SpriteRotation.Left;
+        spriteRotation = SpriteRotation.Right;
         GunExit = transform.GetChild(0).transform;
-        FireRate = 1;
+        FireRate = 1.5f;
         BulletSpeed = 20;
-        Damage = 2;
-        BulletScaleX = 0.25f;
-        BulletScaleY = 0.25f;
-
+        Damage = 4;
+        BulletScaleX = 0.35f;
+        BulletScaleY = 0.35f;
     }
 	
 	
-
 }
