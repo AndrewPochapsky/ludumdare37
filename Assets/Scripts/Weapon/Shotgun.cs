@@ -7,6 +7,7 @@ public class Shotgun : BaseWeapon {
     float initialVelocityOffSet= 0.75f;
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
         Cam = GameObject.FindObjectOfType<Camera>();
         spriteRotation = SpriteRotation.Right;
         GunExit = transform.GetChild(0).transform;
@@ -24,7 +25,8 @@ public class Shotgun : BaseWeapon {
         {
             for (int i = 0; i < amountOfBullets; i++)
             {
-                print("happening"); 
+                print("happening");
+                audioSource.Play();
                 float velocityOffSet = initialVelocityOffSet * i;
                 print("i: " + i);
                 print("velocity offset: " + velocityOffSet);

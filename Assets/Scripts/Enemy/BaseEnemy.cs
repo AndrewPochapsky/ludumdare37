@@ -7,13 +7,20 @@ public class BaseEnemy : MonoBehaviour{
     public float Speed { get; set; }
     public float Damage { get; set; }
     public float Health { get; set; }
-
+    public SpriteRenderer spriteRenderer { get; set; }
+    public Color ColorToChangeTo { get; set; }
+    public Color InitialColor { get; set; }
     public GameObject Gun { get; set; }
+
     public ChangeDirection changeDirection;
     public enum Direction { RIGHT, LEFT }
     public Direction direction { get; set; }
 
-  
+    public virtual void Start()
+    {
+        InitialColor = spriteRenderer.color;
+        
+    }
 
     public virtual void Update()
     {
@@ -49,9 +56,11 @@ public class BaseEnemy : MonoBehaviour{
         Bullet bullet = col.gameObject.GetComponent<Bullet>();
         if (bullet)
         {
+            
             Health -= bullet.damage;
             print("Currenthealth: " + Health);
             Destroy(col.gameObject);
+            StartCoroutine(Flash());
         }
     }
 
@@ -60,4 +69,11 @@ public class BaseEnemy : MonoBehaviour{
         Destroy(gameObject);
     }
    
+
+    public virtual IEnumerator Flash()
+    {
+        spriteRenderer.color = ColorToChangeTo;
+        yield return new WaitForSeconds(0.25f);
+        spriteRenderer.color = InitialColor;
+    }
 }

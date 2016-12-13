@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Box : MonoBehaviour {
+    private AudioSource audioSource;
+    public AudioClip clip;
     int newWeapon;
     Player player;
     Transform playerHand;
     GameObject currentWeapon;
-	// Use this for initialization
-	void Start () {
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindObjectOfType<Player>();
+    }
+
+	// Use this for initialization
+	void Start() {
+         
+        audioSource.clip = clip;
+       
         playerHand = player.transform.GetChild(0).transform;
         currentWeapon = playerHand.transform.GetChild(0).gameObject;
 	}
@@ -19,6 +30,8 @@ public class Box : MonoBehaviour {
         Player player = col.gameObject.GetComponent<Player>();
         if (player)
         {
+            AudioSource.PlayClipAtPoint(clip, transform.position);
+            audioSource.Play();
             SwitchWeapon();
             
             print("CurrentScore: " + ScoreManager.score);
@@ -28,6 +41,7 @@ public class Box : MonoBehaviour {
 
     void SwitchWeapon()
     {
+        audioSource.Play();
         newWeapon = Random.Range(0, 4);
         if(currentWeapon != null)
         {
@@ -38,5 +52,10 @@ public class Box : MonoBehaviour {
         ScoreManager.score++;
 
     }
+    void Update()
+    {
+
+    }
+
 
 }

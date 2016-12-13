@@ -11,7 +11,7 @@ public class BaseWeapon : MonoBehaviour {
     public float BulletSpeed { get; set; }
     public float BulletScaleX { get; set; }
     public float BulletScaleY { get; set; }
-
+    public AudioSource audioSource { get; set; }
     public Vector2 MousePosition { get; set; }
     public Camera Cam;
     public Vector2 Direction;
@@ -44,7 +44,7 @@ public class BaseWeapon : MonoBehaviour {
     {
          if(Time.time > NextFire)
         {
-           
+            audioSource.Play();
             GameObject bullet = Instantiate(Resources.Load<GameObject>("Weapons/Bullet"), GunExit.position, GunExit.rotation);
             bullet.transform.localScale = new Vector2(BulletScaleX, BulletScaleY);
             bullet.GetComponent<Rigidbody2D>().velocity = (Direction * BulletSpeed);

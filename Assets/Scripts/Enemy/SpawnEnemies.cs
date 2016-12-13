@@ -25,6 +25,8 @@ public class SpawnEnemies : MonoBehaviour {
             StartCoroutine(Spawn());
             nextSpawn = batchSpawnRate + Time.time;
         }
+        print("BatchSpawnRate: " + batchSpawnRate);
+        IncreaseSpawn();
 	}
 
     IEnumerator Spawn()
@@ -36,8 +38,20 @@ public class SpawnEnemies : MonoBehaviour {
             GameObject enemy = Instantiate(Resources.Load<GameObject>("Enemies/Enemy"+ Random.Range(0,2)) , _sp.position, _sp.rotation);
             yield return new WaitForSeconds(1f / waveSpawnRate);
         }
-        
-
     }
+
+    public void IncreaseSpawn()
+    {
+        if(TimeManager.time >= 60)
+        {
+            batchSpawnRate = 6;
+        }
+        else if(TimeManager.time >= 120)
+        {
+            enemyNum = 5;
+        }
+        
+    }
+
 
 }

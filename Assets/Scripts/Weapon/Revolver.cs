@@ -6,6 +6,7 @@ public class Revolver : BaseWeapon {
 
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
         Cam = GameObject.FindObjectOfType<Camera>();
         spriteRotation = SpriteRotation.Right;
         GunExit = transform.GetChild(0).transform;

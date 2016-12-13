@@ -14,6 +14,7 @@ public class Rifle : BaseWeapon {
         Damage = 2;
         BulletScaleX = 0.25f;
         BulletScaleY = 0.25f;
+        audioSource = GetComponent<AudioSource>();
     }
 	
 }

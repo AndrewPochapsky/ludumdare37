@@ -6,11 +6,14 @@ public class Player : MonoBehaviour {
     
     private Rigidbody2D rb;
     private CharacterStats stats;
-
+    private FadeController fadeController;
     void Awake()
     {
+        fadeController = GameObject.FindObjectOfType<FadeController>();
+        //fadeController.InstantiateFadeInPanel();
         rb = GetComponent<Rigidbody2D>();
         stats = GetComponent<CharacterStats>();
+       
     }
 
 	// Use this for initialization
@@ -66,7 +69,9 @@ public class Player : MonoBehaviour {
 
     void Die()
     {
+        fadeController.InstantiateFadeOutPanel();
         Destroy(gameObject);
+        ScoreManager.StoreHighScore();
     }
 
 
